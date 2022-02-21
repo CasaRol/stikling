@@ -7,7 +7,7 @@ const Slides = (() => {
 
     return (
         <div>
-            <img src='/examplePhoto.jpg' alt="Slide show image not found" />
+            <img src='/examplePhoto.jpg' alt="Not found" />
         </div>
     )
 })
