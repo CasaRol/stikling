@@ -1,6 +1,7 @@
 import './Styling.css'
 import CountDown from './Components/CountDownTimer/CountDown'
 import { dateToMs } from './scripts'
+import Slides from './Components/Slides/Slides'
 
 function Main() {
     return (
@@ -10,6 +11,7 @@ function Main() {
             <div className="centering">
                 <CountDown timestampMs={dateToMs(new Date("08/19/2022 12:00:00"))} />
             </div>
+            <Slides />
         </div >
     )
 }
