@@ -4,7 +4,7 @@ import '../../Styling.css'
 const Slides = (() => {
 
     const [imgURL, setImgURL] = useState();
-    const [currentIndex, setCurrentIndex] = useState(Number);
+    const [currentIndex, setCurrentIndex] = useState(0);
 
 
 
