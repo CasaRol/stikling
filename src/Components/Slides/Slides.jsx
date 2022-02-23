@@ -6,15 +6,9 @@ const Slides = (() => {
     const [imgURL, setImgURL] = useState();
     const [currentIndex, setCurrentIndex] = useState(Number);
 
-    let picture = [
-        "https://raw.githubusercontent.com/CasaRol/stikling/master/src/images/stiklingScanning/Stikling_1.jpg",
-        "https://raw.githubusercontent.com/CasaRol/stikling/master/src/images/stiklingScanning/Stikling_2.jpg",
-        "https://raw.githubusercontent.com/CasaRol/stikling/master/src/images/stiklingScanning/Stikling_3.jpg",
-        "https://raw.githubusercontent.com/CasaRol/stikling/master/src/images/stiklingScanning/Stikling_4.jpg",
-        "https://raw.githubusercontent.com/CasaRol/stikling/master/src/images/stiklingScanning/Stikling_5.jpg",
-        "https://raw.githubusercontent.com/CasaRol/stikling/master/src/images/stiklingScanning/Stikling_6.jpg"
-    ]
 
+
+    /*
     function changePicture() {
         if (currentIndex > picture.size) {
             setCurrentIndex(0)
@@ -22,13 +16,33 @@ const Slides = (() => {
         setCurrentIndex((currentIndex + 1) % 6);
         setImgURL(picture[currentIndex])
     }
+    */
 
     useEffect(() => {
+
+        let picture = [
+            "https://raw.githubusercontent.com/CasaRol/stikling/master/src/images/stiklingScanning/Stikling_1.jpg",
+            "https://raw.githubusercontent.com/CasaRol/stikling/master/src/images/stiklingScanning/Stikling_2.jpg",
+            "https://raw.githubusercontent.com/CasaRol/stikling/master/src/images/stiklingScanning/Stikling_3.jpg",
+            "https://raw.githubusercontent.com/CasaRol/stikling/master/src/images/stiklingScanning/Stikling_4.jpg",
+            "https://raw.githubusercontent.com/CasaRol/stikling/master/src/images/stiklingScanning/Stikling_5.jpg",
+            "https://raw.githubusercontent.com/CasaRol/stikling/master/src/images/stiklingScanning/Stikling_6.jpg"
+        ]
+
         const imageString = setInterval(() => {
             changePicture();
         }, 10000) //1 minute delay per picture
         return () => clearInterval(imageString);
-    }, [imgURL])
+
+        function changePicture() {
+            if (currentIndex > picture.size) {
+                setCurrentIndex(0)
+            }
+            setCurrentIndex((currentIndex + 1) % 6);
+            setImgURL(picture[currentIndex])
+        }
+
+    }, [currentIndex])
 
     return (
         <div className="centering">
