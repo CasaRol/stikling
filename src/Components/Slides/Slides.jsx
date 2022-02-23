@@ -1,14 +1,38 @@
-//import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import '../../Styling.css'
 
-let picture = "../images/stiklingScanning/Stikling_1.jpg"
-
 const Slides = (() => {
-    //const [imgURL, setImgURL] = useState();
+
+    const [imgURL, setImgURL] = useState();
+    const [currentIndex, setCurrentIndex] = useState(Number);
+
+    let picture = [
+        "https://raw.githubusercontent.com/CasaRol/stikling/master/src/images/stiklingScanning/Stikling_1.jpg",
+        "https://raw.githubusercontent.com/CasaRol/stikling/master/src/images/stiklingScanning/Stikling_2.jpg",
+        "https://raw.githubusercontent.com/CasaRol/stikling/master/src/images/stiklingScanning/Stikling_3.jpg",
+        "https://raw.githubusercontent.com/CasaRol/stikling/master/src/images/stiklingScanning/Stikling_4.jpg",
+        "https://raw.githubusercontent.com/CasaRol/stikling/master/src/images/stiklingScanning/Stikling_5.jpg",
+        "https://raw.githubusercontent.com/CasaRol/stikling/master/src/images/stiklingScanning/Stikling_6.jpg"
+    ]
+
+    function changePicture() {
+        if (currentIndex > picture.size) {
+            setCurrentIndex(0)
+        }
+        setCurrentIndex((currentIndex + 1) % 6);
+        setImgURL(picture[currentIndex])
+    }
+
+    useEffect(() => {
+        const imageString = setInterval(() => {
+            changePicture();
+        }, 10000) //1 minute delay per picture
+        return () => clearInterval(imageString);
+    }, [imgURL])
 
     return (
         <div className="centering">
-            <img style={{ margin: "2rem", border: "2px solid black" }} src={picture} alt="Not found" />
+            <img className="img-responsive w-50" style={{ margin: "2rem", border: "2px solid black" }} src={imgURL} alt="Not found" />
         </div>
     )
 })

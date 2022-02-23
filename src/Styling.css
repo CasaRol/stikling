@@ -1,3 +1,7 @@
+div {
+    font-family: 'Caveat', cursive;
+}
+
 .background {
     background-image: url('./images/babyBackground.jpg');
     max-width: 100%;

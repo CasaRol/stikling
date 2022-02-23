@@ -1,7 +1,6 @@
 import dayjs from 'dayjs'
 
 function dateToMs(date) {
-    console.log(date.getTime())
     return date.getTime()
 }
 
