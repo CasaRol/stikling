@@ -1,32 +1,21 @@
 import { useEffect, useState } from 'react'
+import stikling1 from '../../images/stiklingScanning/Stikling_1.jpg'
+import stikling2 from '../../images/stiklingScanning/Stikling_2.jpg'
+import stikling3 from '../../images/stiklingScanning/Stikling_3.jpg'
+import stikling4 from '../../images/stiklingScanning/Stikling_4.jpg'
+import stikling5 from '../../images/stiklingScanning/Stikling_5.jpg'
+import stikling6 from '../../images/stiklingScanning/Stikling_6.jpg'
 import '../../Styling.css'
 
 const Slides = (() => {
 
-    const [imgURL, setImgURL] = useState("https://raw.githubusercontent.com/CasaRol/stikling/master/src/images/stiklingScanning/Stikling_6.jpg");
+    const [imgURL, setImgURL] = useState(stikling6);
     const [currentIndex, setCurrentIndex] = useState(0);
-
-
-
-    /*
-    function changePicture() {
-        if (currentIndex > picture.size) {
-            setCurrentIndex(0)
-        }
-        setCurrentIndex((currentIndex + 1) % 6);
-        setImgURL(picture[currentIndex])
-    }
-    */
 
     useEffect(() => {
 
         let picture = [
-            "https://raw.githubusercontent.com/CasaRol/stikling/master/src/images/stiklingScanning/Stikling_1.jpg",
-            "https://raw.githubusercontent.com/CasaRol/stikling/master/src/images/stiklingScanning/Stikling_2.jpg",
-            "https://raw.githubusercontent.com/CasaRol/stikling/master/src/images/stiklingScanning/Stikling_3.jpg",
-            "https://raw.githubusercontent.com/CasaRol/stikling/master/src/images/stiklingScanning/Stikling_4.jpg",
-            "https://raw.githubusercontent.com/CasaRol/stikling/master/src/images/stiklingScanning/Stikling_5.jpg",
-            "https://raw.githubusercontent.com/CasaRol/stikling/master/src/images/stiklingScanning/Stikling_6.jpg"
+            stikling1, stikling2, stikling3, stikling4, stikling5, stikling6
         ]
 
         const imageString = setInterval(() => {
@@ -35,7 +24,6 @@ const Slides = (() => {
         return () => clearInterval(imageString);
 
         function changePicture() {
-            console.log("index " + currentIndex)
             if (currentIndex > picture.size) {
                 setCurrentIndex(0)
             }

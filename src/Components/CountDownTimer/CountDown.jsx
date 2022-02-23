@@ -25,16 +25,9 @@ const CountDown = (({ timestampMs }) => {
     }
 
     return (
-        <div className="countDownTimer backgroundColor">
-            <span>{remainingTime.days}</span>
-            <span>Dage</span>
-            <span>{remainingTime.hours}</span>
-            <span>Timer</span>
-            <span>{remainingTime.minutes}</span>
-            <span>Minutter</span>
-            <span>{remainingTime.seconds}</span>
-            <span>Sekunder</span>
-        </div>
+        <div className="border border-dark border-3 rounded bg-white text-center w-50 p-4">
+            <h2>{remainingTime.days} dage {remainingTime.hours} Timer {remainingTime.minutes} Minutter {remainingTime.seconds} Sekunder </h2>
+        </div >
     )
 })
 
