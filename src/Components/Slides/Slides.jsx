@@ -3,7 +3,7 @@ import '../../Styling.css'
 
 const Slides = (() => {
 
-    const [imgURL, setImgURL] = useState();
+    const [imgURL, setImgURL] = useState("https://raw.githubusercontent.com/CasaRol/stikling/master/src/images/stiklingScanning/Stikling_6.jpg");
     const [currentIndex, setCurrentIndex] = useState(0);
 
 
@@ -35,6 +35,7 @@ const Slides = (() => {
         return () => clearInterval(imageString);
 
         function changePicture() {
+            console.log("index " + currentIndex)
             if (currentIndex > picture.size) {
                 setCurrentIndex(0)
             }
