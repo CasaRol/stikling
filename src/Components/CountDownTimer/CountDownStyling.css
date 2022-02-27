@@ -18,3 +18,9 @@
 .backgroundColor {
     background-color: white;
 }
+
+.girly {
+    background-image: url('../../images/itsAGirlBackground.jpg');
+    background-size: 50%;
+    max-width: 100%;
+}

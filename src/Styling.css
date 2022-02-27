@@ -7,6 +7,10 @@ div {
     max-width: 100%;
 }
 
+.girly {
+    background-image: url('./images/itsAGirlBackground.jpg');
+}
+
 .profilePicture {
     max-height: 10rem;
     border-radius: 25rem;
