@@ -6,7 +6,7 @@ import SizeComparison from './Components/SizeComparison/SizeComparison'
 
 function Main() {
 
-    const dueDate = new Date("08/16/2022 12:00:00")
+    const dueDate = new Date("08/16/2022 13:00:00")
 
     return (
         <div className="girly">

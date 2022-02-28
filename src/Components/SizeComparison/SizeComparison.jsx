@@ -48,7 +48,7 @@ const defaultData = {
 
 const SizeComparison = (({ timestampMs }) => {
 
-    const [daysLeft, setDaysLeft] = useState(defaultRemainingTime);
+    const [week, setWeeks] = useState(defaultRemainingTime.days);
 
     const [weekData, setWeekData] = useState(defaultData);
 
@@ -56,6 +56,8 @@ const SizeComparison = (({ timestampMs }) => {
 
     useEffect(() => {
         updateDaysLeft(timestampMs)
+
+        console.log(week)
 
         getWeekData()
 
@@ -65,15 +67,16 @@ const SizeComparison = (({ timestampMs }) => {
 
         return () => clearInterval(intervalId);
 
-    }, [timestampMs])
+    }, [timestampMs, week])
 
     function getWeekData() {
-        currentWeekData(15)
+        console.log(week)
+        currentWeekData(week)
 
     }
 
     function updateDaysLeft(timeStamp) {
-        setDaysLeft(getRemainingTime(timeStamp));
+        setWeeks(Math.floor(40 - ((getRemainingTime(timeStamp).days + 1) / 7)));
     }
 
     function currentWeekData(weekNumber) {
@@ -82,7 +85,7 @@ const SizeComparison = (({ timestampMs }) => {
             case 13:
                 setWeekData({
                     weekNumber: 13,
-                    text: "Dit foster måler omkring 8.5cm og er på størrelse med en fersken",
+                    text: "Stikling måler omkring 8.5cm og er på størrelse med en fersken",
                     image: week13,
                     dataUrl: "https://www.femina.dk/liv/gravid/gravid-uge-13-tid-til-tage-hul-paa-2-trimester"
                 })
@@ -90,7 +93,7 @@ const SizeComparison = (({ timestampMs }) => {
             case 14:
                 setWeekData({
                     weekNumber: 14,
-                    text: "Fosteret er nu omkring 13cm - Omtrent som en citron",
+                    text: "Stikling er nu omkring 13cm - Omtrent som en citron",
                     image: week14,
                     dataUrl: "https://www.femina.dk/gravid/gravid-uge-uge/uge-14-tisser-og-drikker"
                 })
@@ -98,7 +101,7 @@ const SizeComparison = (({ timestampMs }) => {
             case 15:
                 setWeekData({
                     weekNumber: 15,
-                    text: "Dit foster er nu cirka 15cm og på størrelse med et æble",
+                    text: "Stikling er nu cirka 15cm og på størrelse med et æble",
                     image: week15,
                     dataUrl: "https://www.femina.dk/gravid/gravid-uge-uge/uge-15-oever-vejrtraekning"
                 })
@@ -106,7 +109,7 @@ const SizeComparison = (({ timestampMs }) => {
             case 16:
                 setWeekData({
                     weekNumber: 16,
-                    text: "Fostret er omrking 16cm - Omtrent som en appelsin",
+                    text: "Stikling er omrking 16cm - Omtrent som en appelsin",
                     image: week16,
                     dataUrl: "https://www.femina.dk/gravid/gravid-uge-uge/uge-16-tid-til-fostervandsproeve"
                 })
@@ -114,7 +117,7 @@ const SizeComparison = (({ timestampMs }) => {
             case 17:
                 setWeekData({
                     weekNumber: 17,
-                    text: "Dit foster er nu ca 17cm - Omtrent som en avokado",
+                    text: "Stikling er nu ca 17cm - Omtrent som en avokado",
                     image: week17,
                     dataUrl: "https://www.femina.dk/gravid/gravid-uge-uge/uge-17-danner-et-fedtlag"
                 })
@@ -122,7 +125,7 @@ const SizeComparison = (({ timestampMs }) => {
             case 18:
                 setWeekData({
                     weekNumber: 18,
-                    text: "Fosteret er omkring 18cm og på størrelse med en sød kartoffel",
+                    text: "Stikling er omkring 18cm og på størrelse med en sød kartoffel",
                     image: week18,
                     dataUrl: "https://www.femina.dk/gravid/gravid-uge-uge/uge-18-gang-i-maven"
                 })
@@ -130,7 +133,7 @@ const SizeComparison = (({ timestampMs }) => {
             case 19:
                 setWeekData({
                     weekNumber: 19,
-                    text: "Dit foster måler omkring 19cm og er på størrelse med en stor peberfrugt",
+                    text: "Stikling måler omkring 19cm og er på størrelse med en stor peberfrugt",
                     image: week19,
                     dataUrl: "https://www.femina.dk/liv/gravid/gravid-uge-19-hoerelsen-udvikles"
                 })
@@ -138,7 +141,7 @@ const SizeComparison = (({ timestampMs }) => {
             case 20:
                 setWeekData({
                     weekNumber: 20,
-                    text: "Dit foster måler omkring 20cm og er på størrelse med en stor grapefrugt",
+                    text: "Stikling måler omkring 20cm og er på størrelse med en stor grapefrugt",
                     image: week20,
                     dataUrl: "https://www.femina.dk/gravid/gravid-uge-uge/uge-20-hoerer-din-stemme"
                 })
@@ -146,7 +149,7 @@ const SizeComparison = (({ timestampMs }) => {
             case 21:
                 setWeekData({
                     weekNumber: 21,
-                    text: "Dit foster er nu omkring 22cm og på størrelse med et granatæble",
+                    text: "Stikling er nu omkring 22cm og på størrelse med et granatæble",
                     image: week21,
                     dataUrl: "https://www.femina.dk/gravid/gravid-uge-uge/uge-21-fitness-i-maven"
                 })
@@ -154,7 +157,7 @@ const SizeComparison = (({ timestampMs }) => {
             case 22:
                 setWeekData({
                     weekNumber: 22,
-                    text: "Dit foster er nu omkring 25cm og på størrelse med en mango",
+                    text: "Stikling er nu omkring 25cm og på størrelse med en mango",
                     image: week22,
                     dataUrl: "https://www.femina.dk/gravid/gravid-uge-uge/uge-22-tynd-og-rynket"
                 })
@@ -162,7 +165,7 @@ const SizeComparison = (({ timestampMs }) => {
             case 23:
                 setWeekData({
                     weekNumber: 23,
-                    text: "Dit foster er cirka 28cm og på størrelse med en papaya",
+                    text: "Stikling er cirka 28cm og på størrelse med en papaya",
                     image: week23,
                     dataUrl: "https://www.femina.dk/gravid/gravid-uge-uge/uge-23-lytter-og-droemmer"
                 })
@@ -170,7 +173,7 @@ const SizeComparison = (({ timestampMs }) => {
             case 24:
                 setWeekData({
                     weekNumber: 24,
-                    text: "Fosteret er omkring 30cm - omtrent ligesom en artiskok",
+                    text: "Stikling er omkring 30cm - omtrent ligesom en artiskok",
                     image: week24,
                     dataUrl: "https://www.femina.dk/gravid/gravid-uge-uge/uge-24-reagerer-paa-dit-humoer"
                 })
@@ -178,7 +181,7 @@ const SizeComparison = (({ timestampMs }) => {
             case 25:
                 setWeekData({
                     weekNumber: 25,
-                    text: "Fosteret er nu cirka 31cm og på størrelse med en broccoli",
+                    text: "Stikling er nu cirka 31cm og på størrelse med en broccoli",
                     image: week25,
                     dataUrl: "https://www.femina.dk/gravid/gravid-uge-uge/uge-25-lungerne-modnes"
                 })
@@ -186,7 +189,7 @@ const SizeComparison = (({ timestampMs }) => {
             case 26:
                 setWeekData({
                     weekNumber: 26,
-                    text: "Fosteret er omkring 32cm og på størrelse med en pomelo",
+                    text: "Stikling er omkring 32cm og på størrelse med en pomelo",
                     image: week26,
                     dataUrl: "https://www.femina.dk/gravid/gravid-uge-uge/uge-26-oejnene-faerdigudvikles"
                 })
@@ -194,7 +197,7 @@ const SizeComparison = (({ timestampMs }) => {
             case 27:
                 setWeekData({
                     weekNumber: 27,
-                    text: "Dit foster måler omkring 33cm og er på størrelse med en knoldselleri",
+                    text: "Stikling måler omkring 33cm og er på størrelse med en knoldselleri",
                     image: week27,
                     dataUrl: "https://www.femina.dk/gravid/gravid-uge-uge/uge-27-smager-paa-fostervandet"
                 })
@@ -202,7 +205,7 @@ const SizeComparison = (({ timestampMs }) => {
             case 28:
                 setWeekData({
                     weekNumber: 28,
-                    text: "Fosteret måler omkring 35cm - omtrent som et spidskålshoved",
+                    text: "Stikling måler omkring 35cm - omtrent som et spidskålshoved",
                     image: week28,
                     dataUrl: "https://www.femina.dk/gravid/gravid-uge-uge/uge-28-vokser-og-modnes"
                 })
@@ -210,7 +213,7 @@ const SizeComparison = (({ timestampMs }) => {
             case 29:
                 setWeekData({
                     weekNumber: 29,
-                    text: "Dit foster måler nu cirka 36cm og er på størrelse med et rødkålshoved",
+                    text: "Stikling måler nu cirka 36cm og er på størrelse med et rødkålshoved",
                     image: week29,
                     dataUrl: "https://www.femina.dk/gravid/gravid-uge-uge/uge-29-barnet-er-levedygtigt"
                 })
@@ -218,7 +221,7 @@ const SizeComparison = (({ timestampMs }) => {
             case 30:
                 setWeekData({
                     weekNumber: 30,
-                    text: "Fosteret er nu omkring 37cm og på størrelse med et blomkålshoved",
+                    text: "Stikling er nu omkring 37cm og på størrelse med et blomkålshoved",
                     image: week30,
                     dataUrl: "https://www.femina.dk/gravid/gravid-uge-uge/uge-29-barnet-er-levedygtigt"
                 })
@@ -226,7 +229,7 @@ const SizeComparison = (({ timestampMs }) => {
             case 31:
                 setWeekData({
                     weekNumber: 31,
-                    text: "Dit foster måler cirka 38cm - omtrent som en kokosnød",
+                    text: "Stikling måler cirka 38cm - omtrent som en kokosnød",
                     image: week31,
                     dataUrl: "https://www.femina.dk/gravid/gravid-uge-uge/uge-31-kraftig-vaekst"
                 })
@@ -234,7 +237,7 @@ const SizeComparison = (({ timestampMs }) => {
             case 32:
                 setWeekData({
                     weekNumber: 32,
-                    text: "Fosteret er ca. 40cm - omkring ligesom et hvidkålshoved",
+                    text: "Stikling er ca. 40cm - omkring ligesom et hvidkålshoved",
                     image: week32,
                     dataUrl: "https://www.femina.dk/gravid/gravid-uge-uge/uge-32-affoeringen-er-klar"
                 })
@@ -242,7 +245,7 @@ const SizeComparison = (({ timestampMs }) => {
             case 33:
                 setWeekData({
                     weekNumber: 33,
-                    text: "Dit foster måler nu cirka 42cm - omtrent som en ananas",
+                    text: "Stikling måler nu cirka 42cm - omtrent som en ananas",
                     image: week33,
                     dataUrl: "https://www.femina.dk/gravid/gravid-uge-uge/uge-33-kan-traekke-vejret"
                 })
@@ -250,7 +253,7 @@ const SizeComparison = (({ timestampMs }) => {
             case 34:
                 setWeekData({
                     weekNumber: 34,
-                    text: "Dit foster er cirka 43cm og på størrelse med en netmelon",
+                    text: "Stikling er cirka 43cm og på størrelse med en netmelon",
                     image: week34,
                     dataUrl: "https://www.femina.dk/gravid/gravid-uge-uge/uge-34-gaar-inde-i-maven"
                 })
@@ -258,7 +261,7 @@ const SizeComparison = (({ timestampMs }) => {
             case 35:
                 setWeekData({
                     weekNumber: 35,
-                    text: "Fosteret er cirka 44cm - omtrent som en honningmelon",
+                    text: "Stikling er cirka 44cm - omtrent som en honningmelon",
                     image: week35,
                     dataUrl: "https://www.femina.dk/gravid/gravid-uge-uge/uge-35-fylder-livmoderen-ud"
                 })
@@ -266,7 +269,7 @@ const SizeComparison = (({ timestampMs }) => {
             case 36:
                 setWeekData({
                     weekNumber: 36,
-                    text: "Dit foster er nu cirka 45cm og på størrelse med et romaine-salathoved",
+                    text: "Stikling er nu cirka 45cm og på størrelse med et romaine-salathoved",
                     image: week36,
                     dataUrl: "https://www.femina.dk/gravid/gravid-uge-uge/uge-36-med-hovedet-nedad"
                 })
@@ -274,7 +277,7 @@ const SizeComparison = (({ timestampMs }) => {
             case 37:
                 setWeekData({
                     weekNumber: 37,
-                    text: "Fosteret er nu cirka 47cm langt - omtrent som et bladbede-bundt",
+                    text: "Stikling er nu cirka 47cm langt - omtrent som et bladbede-bundt",
                     image: week37,
                     dataUrl: "https://www.femina.dk/gravid/gravid-uge-uge/uge-37-fuldbaarent-barn"
                 })
@@ -282,7 +285,7 @@ const SizeComparison = (({ timestampMs }) => {
             case 38:
                 setWeekData({
                     weekNumber: 38,
-                    text: "Dit foster er nu omkring 49-50cm og cirka så langt som en porre",
+                    text: "Stikling er nu omkring 49-50cm og cirka så langt som en porre",
                     image: week38,
                     dataUrl: "https://www.femina.dk/gravid/gravid-uge-uge/uge-38-foedt-til-tiden"
                 })
@@ -290,7 +293,7 @@ const SizeComparison = (({ timestampMs }) => {
             case 39:
                 setWeekData({
                     weekNumber: 39,
-                    text: "Fosteret er omkring 50-51cm og på størrelse med en stor vandmelon",
+                    text: "Stikling er omkring 50-51cm og på størrelse med en stor vandmelon",
                     image: week39,
                     dataUrl: "https://www.femina.dk/gravid/gravid-uge-uge/uge-39-lagrene-opbygges"
                 })
@@ -298,7 +301,7 @@ const SizeComparison = (({ timestampMs }) => {
             case 40:
                 setWeekData({
                     weekNumber: 40,
-                    text: "Dit foster er cirka 51-52 cm og på størrelse med et stort græskar",
+                    text: "Stikling er cirka 51-52 cm og på størrelse med et stort græskar",
                     image: week40,
                     dataUrl: "https://www.femina.dk/gravid/gravid-uge-uge/uge-40-snart-klar"
                 })
