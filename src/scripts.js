@@ -4,6 +4,7 @@ function dateToMs(date) {
     return date.getTime()
 }
 
+//Remainding time
 function getRemainingTime(timestampMs) {
     const timestampGoal = dayjs(timestampMs);
     const timestampNow = dayjs();
@@ -34,4 +35,48 @@ function getRemainingDays(timestampNow, timestampGoal) {
     return timestampGoal.diff(timestampNow, 'days');
 }
 
-export { getRemainingTime, dateToMs }
+//Passed time
+function getPassedTime(timestampMs) {
+    const timestampGoal = dayjs(timestampMs);
+    const timestampNow = dayjs();
+
+
+
+    return {
+        seconds: getPassedSeconds(timestampNow, timestampGoal),
+        minutes: getPassedMinutes(timestampNow, timestampGoal),
+        hours: getPassedHours(timestampNow, timestampGoal),
+        days: getPassedDays(timestampNow, timestampGoal),
+        months: getPassedMonths(timestampNow, timestampGoal),
+        years: getPassedYears(timestampNow, timestampGoal)
+    }
+}
+
+function getPassedSeconds(timestampNow, timestampGoal) {
+    return timestampNow.diff(timestampGoal, 'seconds') % 60;
+}
+
+function getPassedMinutes(timestampNow, timestampGoal) {
+    return timestampNow.diff(timestampGoal, 'minutes') % 60;
+}
+
+function getPassedHours(timestampNow, timestampGoal) {
+    return timestampNow.diff(timestampGoal, 'hours') % 24;
+}
+
+function getPassedDays(timestampNow, timestampGoal) {
+    return Math.floor(timestampNow.diff(timestampGoal, 'days') % 30.43);
+}
+
+function getPassedMonths(timestampNow, timestampGoal) {
+    return timestampNow.diff(timestampGoal, 'months') % 12;
+}
+
+function getPassedYears(timestampNow, timestampGoal) {
+    return timestampNow.diff(timestampGoal, 'years');
+}
+
+
+
+
+export { getRemainingTime, getPassedTime, dateToMs }
