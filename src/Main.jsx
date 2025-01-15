@@ -1,11 +1,17 @@
 import './Styling.css'
 import CountDown from './Components/CountDownTimer/CountDown'
 import { dateToMs } from './scripts'
-import Slides from './Components/Slides/Slides'
+//import Slides from './Components/Slides/Slides'
+import Polaroid from './Components/Slides/Polaroid'
 
 function Main() {
+    const getRotation = () => {
+        return Math.random() * 20 - 15;
+    }
+
+
     return (
-        <div className="girly">
+        <div className="peppa">
             <h1 className="d-flex justify-content-center align-items-center w-100 pt-3"><strong>Albertes alder</strong></h1>
             {/* Date is formatted as MM/dd/yyyy HH:mm:ss */}
             <div className="d-flex justify-content-center align-items-center w-100">
@@ -17,8 +23,10 @@ function Main() {
                     <img className="profilePicture" src="./Mathias.jpg" alt="Mathias not found" />
                 </div>
             </div>
-            <div>
-                <Slides />
+            <div className="d-flex w-100 justify-content-center">
+                    <Polaroid rotate={getRotation()} />
+                    <Polaroid rotate={getRotation()} />
+                    <Polaroid rotate={getRotation()} />
             </div>
 
         </div >

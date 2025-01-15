@@ -11,11 +11,18 @@ div {
     background-image: url('./images/itsAGirlBackground.jpg');
 }
 
+.peppa {
+    background-image: url('./images/PeppaPigBackground.jpg')
+}
+
 .profilePicture {
     max-height: 10rem;
     border-radius: 25rem;
     margin-right: 2rem;
     margin-left: 2rem;
+    border-style: solid;
+    border-color: black;
+    border-width: .1rem
 }
 
 .centering {
@@ -28,8 +35,37 @@ div {
     justify-content: center;
 }
 
+.flex {
+    display: flex;
+}
+
 .centerImage {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.item {
+    display: flex;
+    max-width: 25rem;
+    padding: .5rem;
+}
+
+.polaroid {
+    background: white;
+    padding: 1rem;
+    text-align: center;
+    border: solid;
+    border-width: .1rem;
+    box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,0.2);
+}
+
+.polaroid>img {
+    max-width: 90%;
+}
+
+.caption {
+    font-size: 1rem;
+    text-align: center;
+    line-height: 2em;
 }
