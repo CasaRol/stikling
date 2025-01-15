@@ -1,6 +1,5 @@
 import './Styling.css'
 import CountDown from './Components/CountDownTimer/CountDown'
-import { dateToMs } from './scripts'
 //import Slides from './Components/Slides/Slides'
 import Polaroid from './Components/Slides/Polaroid'
 

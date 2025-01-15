@@ -5,10 +5,6 @@ import timezone from 'dayjs/plugin/timezone';
 dayjs.extend(utc);
 dayjs.extend(timezone)
 
-function dateToMs(date) {
-    return date.getTime()
-}
-
 //Remainding time
 function getRemainingTime(timestampMs) {
     const timestampGoal = dayjs(timestampMs);
@@ -84,4 +80,4 @@ function getPassedYears(timestampNow, timestampGoal) {
 
 
 
-export { getRemainingTime, getPassedTime, dateToMs }
+export { getRemainingTime, getPassedTime }
