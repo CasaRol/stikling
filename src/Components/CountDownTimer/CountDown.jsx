@@ -11,19 +11,19 @@ const defaultRemainingTime = {
     years: '00'
 }
 
-const CountDown = (({ timestampMs }) => {
+const CountDown = (({ birthDay }) => {
 
     const [remainingTime, setRemainingTime] = useState(defaultRemainingTime);
 
     useEffect(() => {
         const intervalId = setInterval(() => {
-            updateRemainingTime(timestampMs);
+            updateRemainingTime(birthDay);
         }, 1000)
         return () => clearInterval(intervalId);
-    }, [timestampMs])
+    }, [birthDay])
 
-    function updateRemainingTime(countDown) {
-        setRemainingTime(getPassedTime(countDown))
+    function updateRemainingTime(startingDateTime) {
+        setRemainingTime(getPassedTime(startingDateTime))
     }
 
     return (

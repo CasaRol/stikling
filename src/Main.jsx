@@ -5,6 +5,7 @@ import { dateToMs } from './scripts'
 import Polaroid from './Components/Slides/Polaroid'
 
 function Main() {
+    const alberteBirthdayTime = "2022-08-06T20:06:00"
     const getRotation = () => {
         return Math.random() * 20 - 15;
     }
@@ -18,7 +19,7 @@ function Main() {
                 <div>
                     <img className="profilePicture" src="./Julie.jpg" alt="Julie not found" />
                 </div>
-                <CountDown timestampMs={dateToMs(new Date("08/06/2022 20:08:00"))} />
+                <CountDown birthDay={alberteBirthdayTime} />
                 <div>
                     <img className="profilePicture" src="./Mathias.jpg" alt="Mathias not found" />
                 </div>
