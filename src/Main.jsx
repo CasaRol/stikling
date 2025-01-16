@@ -5,7 +5,7 @@ import Slides from './Components/Slides/Slides'
 import SizeComparison from './Components/SizeComparison/SizeComparison'
 
 function Main() {
-    const dueDate = new Date("05/02/2025 13:00:00")
+    const dueDate = new Date("2025-05-02T13:00:00")
     
     return (
         <div className="girly pb-5">
