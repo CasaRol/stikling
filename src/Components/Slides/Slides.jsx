@@ -35,7 +35,7 @@ const Slides = (() => {
 
     return (
         <div className="centering">
-            <img className="img-responsive w-50" style={{ margin: "2rem", border: "2px solid black" }} src={imgURL} alt="Not found" />
+            <img className="img-responsive w-100 m-2 border border-dark" src={imgURL} alt="Not found" />
         </div>
     )
 })
