@@ -4,6 +4,8 @@ import { dateToMs } from './scripts'
 import Slides from './Components/Slides/Slides'
 
 function Main() {
+    const dueDate = new Date("05/02/2025 13:00:00")
+    
     return (
         <div className="girly">
             <h1 className="d-flex justify-content-center align-items-center w-100 pt-3"><strong>Baby girl Stikling nedtælling</strong></h1>
