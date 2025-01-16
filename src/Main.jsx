@@ -6,10 +6,10 @@ import SizeComparison from './Components/SizeComparison/SizeComparison'
 
 function Main() {
     const dueDate = new Date("2025-05-02T13:00:00")
-    
+
     return (
         <div className="girly pb-5">
-            <h1 className="d-flex justify-content-center align-items-center w-100 pt-3 pb-3"><strong>Baby girl Stikling nedtælling</strong></h1>
+            <h1 className="d-flex justify-content-center align-items-center w-100 pt-3 pb-3"><strong>Pipling nedtælling</strong></h1>
             {/* Date is formatted as MM/dd/yyyy HH:mm:ss */}
             <div className="d-flex justify-content-center align-items-center w-100">
                 <img className="profilePicture border border-dark" src="./Julie.jpg" alt="Julie not found" />
