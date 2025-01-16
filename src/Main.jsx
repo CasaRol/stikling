@@ -1,6 +1,5 @@
 import './Styling.css'
 import CountDown from './Components/CountDownTimer/CountDown'
-import { dateToMs } from './scripts'
 import Slides from './Components/Slides/Slides'
 import SizeComparison from './Components/SizeComparison/SizeComparison'
 
@@ -13,14 +12,14 @@ function Main() {
             {/* Date is formatted as MM/dd/yyyy HH:mm:ss */}
             <div className="d-flex justify-content-center align-items-center w-100">
                 <img className="profilePicture border border-dark" src="./Julie.jpg" alt="Julie not found" />
-                <CountDown timestampMs={dateToMs(dueDate)} />
+                <CountDown timestampMs={dueDate} />
                 <div>
                     <img className="profilePicture border border-dark" src="./Mathias.jpg" alt="Mathias not found" />
                 </div>
             </div>
             <div className="row pt-2">
                 <div className="col d-flex align-items-center">
-                    <SizeComparison timestampMs={dateToMs(dueDate)} />
+                    <SizeComparison timestampMs={dueDate} />
                 </div>
                 <div className="col-5">
                     <Slides />
