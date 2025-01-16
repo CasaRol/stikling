@@ -75,7 +75,7 @@ const SizeComparison = (({ timestampMs }) => {
     }
 
     function updateDaysLeft(timeStamp) {
-        setWeeks(Math.floor(40 - ((getRemainingTime(timeStamp).days + 1) / 7)));
+        setWeeks(Math.floor(40 - ((getRemainingTime(timeStamp).weeks))));
     }
 
     function currentWeekData(weekNumber) {
