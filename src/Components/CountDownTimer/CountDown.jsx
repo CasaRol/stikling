@@ -74,7 +74,7 @@ const CountDown = ((props) => {
             }
             {!props.born ? <h3>({timeCount.weeks} {timeCount.weeks > 1 ? " uger " : " uge "} tilbage)</h3> : ("")}
             <p>
-                {props.born ? "Født: " : "Anslået dato: "}
+                {props.born ? "Født: " : "Terminsdato: "}
                 <strong>{formattedDate}</strong>
             </p>
         </div >
