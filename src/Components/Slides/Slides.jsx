@@ -1,21 +1,19 @@
 import { useEffect, useState } from 'react'
-import stikling1 from '../../images/stiklingScanning/Stikling_1.jpg'
-import stikling2 from '../../images/stiklingScanning/Stikling_2.jpg'
-import stikling3 from '../../images/stiklingScanning/Stikling_3.jpg'
-import stikling4 from '../../images/stiklingScanning/Stikling_4.jpg'
-import stikling5 from '../../images/stiklingScanning/Stikling_5.jpg'
-import stikling6 from '../../images/stiklingScanning/Stikling_6.jpg'
+import Pipling1 from '../../images/piplingScannings/Pipling1.jpg'
+import Pipling2 from '../../images/piplingScannings/Pipling2.jpg'
+import Pipling3 from '../../images/piplingScannings/Pipling3.jpg'
+import Pipling4 from '../../images/piplingScannings/Pipling4.jpg'
 import '../../Styling.css'
 
 const Slides = (() => {
 
-    const [imgURL, setImgURL] = useState(stikling6);
+    const [imgURL, setImgURL] = useState(Pipling1);
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
 
         let picture = [
-            stikling1, stikling2, stikling3, stikling4, stikling5, stikling6
+            Pipling1, Pipling2, Pipling3, Pipling4
         ]
 
         const imageString = setInterval(() => {
@@ -27,7 +25,7 @@ const Slides = (() => {
             if (currentIndex > picture.size) {
                 setCurrentIndex(0)
             }
-            setCurrentIndex((currentIndex + 1) % 6);
+            setCurrentIndex((currentIndex + 1) % 4);
             setImgURL(picture[currentIndex])
         }
 
