@@ -7,16 +7,15 @@ dayjs.extend(timezone)
 
 //Remainding time
 function getRemainingTime(timestampMs) {
-    const timestampGoal = dayjs(timestampMs);
+    const timestampGoal = dayjs(timestampMs).tz('Europe/Copenhagen'); //Accounts for daylight saving time
     const timestampNow = dayjs();
-
-
 
     return {
         seconds: getRemainingSeconds(timestampNow, timestampGoal),
         minutes: getRemainingMinutes(timestampNow, timestampGoal),
         hours: getRemainingHours(timestampNow, timestampGoal),
-        days: getRemainingDays(timestampNow, timestampGoal)
+        days: getRemainingDays(timestampNow, timestampGoal),
+        weeks: getRemainingWeeks(timestampNow, timestampGoal)
     }
 }
 
@@ -34,6 +33,10 @@ function getRemainingHours(timestampNow, timestampGoal) {
 
 function getRemainingDays(timestampNow, timestampGoal) {
     return timestampGoal.diff(timestampNow, 'days');
+}
+
+function getRemainingWeeks(timestampNow, timestampGoal) {
+    return timestampGoal.diff(timestampNow, 'weeks');
 }
 
 //Passed time
