@@ -32,8 +32,8 @@ const Slides = (() => {
     }, [currentIndex])
 
     return (
-        <div className="centering">
-            <img className="img-responsive w-100 m-2 border border-dark" src={imgURL} alt="Not found" />
+        <div>
+            <img className="img-responsive w-100 border border-dark" src={imgURL} alt="Not found" />
         </div>
     )
 })

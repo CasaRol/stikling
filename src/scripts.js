@@ -1,10 +1,11 @@
-import dayjs from 'dayjs'
-const utc = require('dayjs/plugin/utc');
-const timezone = require('dayjs/plugin/timezone');
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
 
 dayjs.extend(utc);
-dayjs.extend(timezone);
+dayjs.extend(timezone)
 
+//Remainding time
 function getRemainingTime(timestampMs) {
     const timestampGoal = dayjs(timestampMs).tz('Europe/Copenhagen'); //Accounts for daylight saving time
     const timestampNow = dayjs();
