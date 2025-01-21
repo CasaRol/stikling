@@ -41,7 +41,7 @@ function getRemainingWeeks(timestampNow, timestampGoal) {
 
 //Passed time
 function getPassedTime(timestampMs) {
-    const timestampGoal = dayjs.utc(timestampMs).tz('Europe/Copenhagen'); //Accounts for daylight saving time
+    const timestampGoal = dayjs(timestampMs).tz('Europe/Copenhagen'); //Accounts for daylight saving time
     const timestampNow = dayjs();
 
     return {
