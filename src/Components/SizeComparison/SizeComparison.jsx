@@ -321,7 +321,7 @@ const SizeComparison = (({ timestampMs }) => {
     }
 
     return (
-        <div className="d-flex flex-column bg-black bg-opacity-25 m-3 rounded border border-dark">
+        <div className="d-flex flex-column bg-black bg-opacity-25 m-5 rounded border border-dark">
             <h4 className="text-center mt-3"><strong>Uge: {weekData.weekNumber}</strong></h4>
             <span className="text-center m-3"><strong>{weekData.text}</strong></span>
             <img className="rounded mx-auto w-50 border border-dark" src={weekData.image} alt="Not found" />

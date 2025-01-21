@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import './CountDownStyling.css'
 import { getRemainingTime, getPassedTime } from '../../scripts'
 
 const defaultTime = {

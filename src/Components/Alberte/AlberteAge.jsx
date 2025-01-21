@@ -10,7 +10,7 @@ function AlberteAge() {
 
 
     return (
-        <div className="girly pb-5">
+        <div className="peppa pb-5">
             <h1 className="d-flex justify-content-center align-items-center w-100 pt-3 pb-3"><strong>Albertes alder</strong></h1>
             {/* Date is formatted as MM/dd/yyyy HH:mm:ss */}
             <div className="d-flex justify-content-center align-items-center w-100">
