@@ -1,4 +1,5 @@
 import '../../Styling.css'
+import './dueDateStyling.css'
 import CountDown from '../CountDownTimer/CountDown'
 import SizeComparison from '../SizeComparison/SizeComparison'
 import Slides from '../Slides/Slides'

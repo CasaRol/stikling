@@ -2,11 +2,6 @@ div {
     font-family: 'Caveat', cursive;
 }
 
-body {
-    background-image: url('./images/itsAGirlBackground.jpg');
-    background-size: 50%;
-}
-
 .peppa {
     background-image: url('./images/PeppaPigBackground.jpg');
 }
