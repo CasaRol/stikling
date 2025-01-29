@@ -2,10 +2,9 @@ div {
     font-family: 'Caveat', cursive;
 }
 
-.girly {
+body {
     background-image: url('./images/itsAGirlBackground.jpg');
     background-size: 50%;
-    max-width: 100%;
 }
 
 .peppa {
